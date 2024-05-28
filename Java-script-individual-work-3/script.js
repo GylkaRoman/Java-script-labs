@@ -12,6 +12,10 @@ class Transaction {
     }
 }
 
+/**
+ * Добавляет транзакцию в таблицу.
+ * @param {Transaction} transaction - Транзакция для таблицы.
+ */
 const displayTransaction = (transaction) => {
     const tableBody = document.querySelector('.table__body');
 
@@ -46,6 +50,9 @@ const displayTransaction = (transaction) => {
     }
 };
 
+/**
+ * Вычисляет и отображает общую сумму всех транзакций.
+ */
 const calculateTotal = () => {
     let totalAmount = 0;
     for (let i = 0; i < transactions.length; i++) {
@@ -54,6 +61,9 @@ const calculateTotal = () => {
     document.querySelector('.totalAmount').innerText = totalAmount;
 };
 
+/**
+ * Добавляет новую транзакцию на основе данных формы.
+ */
 const addTransaction = () => {
     const date = document.querySelector('.table-form__date').value;
     const amount = document.querySelector('.table-form__amount').value;
@@ -73,6 +83,10 @@ const addTransaction = () => {
 
 const form = document.querySelector(".table-form");
 
+/**
+ * Обработчик события отправки формы.
+ * @param {Event} event - Событие отправки формы.
+ */
 form.addEventListener('submit', function (event) {
     event.preventDefault();
     addTransaction();
@@ -80,6 +94,10 @@ form.addEventListener('submit', function (event) {
 
 let tableBody = document.querySelector('.table__body');
 
+/**
+ * Удаляет транзакцию по её ID.
+ * @param {number} transactionID - ID транзакции для удаления.
+ */
 const deleteTransaction = (transactionID) => {
     const index = transactions.findIndex(transaction => transaction.transactionID === transactionID);
     if (index !== -1) {
@@ -87,6 +105,10 @@ const deleteTransaction = (transactionID) => {
     }
 };
 
+/**
+ * Переключает отображение полного описания транзакции.
+ * @param {number} transactionID - ID транзакции для переключения описания.
+ */
 const toggleDescription = (transactionID) => {
     const row = document.querySelector(`.table__line-body[id-row="${transactionID}"]`);
     const tableDescription = row.querySelector('.table__description');
@@ -104,6 +126,10 @@ const toggleDescription = (transactionID) => {
     }
 };
 
+/**
+ * Обработчик событий нажатий на кнопки в таблице.
+ * @param {Event} event - Событие нажатия на кнопку.
+ */
 tableBody.addEventListener('click', function (event) {
     if (event.target.classList.contains('delete-btn')) {
         const row = event.target.closest('.table__line-body');
