@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="body">
+    <div class="wrapper">
+        <div class="container container-table">
+            <form class="table-form" action="#" method="post">
+                <fieldset class="table__fieldset">
+                    <legend class="table__legend">Создайте новую транзакцию</legend>
+                    <input placeholder="Date" type="date" class="table-form__date" required>
+                    <input placeholder="Amount" type="number" class="table-form__amount" required>
+                    <input placeholder="Category" type="text" class="table-form__category" required>
+                    <input placeholder="Description" type="text" class="table-form__description" required>
+                </fieldset>
+                <button class="table__submit" type="submit">Submit</button>
+            </form>
+            <table class="table">
+                <thead class="table__head">
+                    <tr class="table__line table__line-head">
+                        <th class="table__id">id</th>
+                        <th class="table__date">date</th>
+                        <th class="table__amount">amount</th>
+                        <th class="table__category">category</th>
+                        <th class="table__description">description</th>
+                        <th class="table__actions">actions</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body"></tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total Amount:</td>
+                        <td colspan="5" class="total">
+                            <span class="totalAmount">0</span>
+                        </td>
+                    </tr>
+
+                </tfoot>
+            </table>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
