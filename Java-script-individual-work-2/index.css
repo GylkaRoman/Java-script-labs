@@ -1,0 +1,11 @@
+.advise {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+#activity {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 20px;
+}
